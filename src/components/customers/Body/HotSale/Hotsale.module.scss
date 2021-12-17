@@ -1,0 +1,71 @@
+.boxflashsale {
+  margin-top: 60px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+
+  .box_title {
+    display: flex;
+    border-radius: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+  }
+
+  .box_text {
+    display: flex;
+    justify-content: start;
+  }
+
+  .box_title__title {
+    .text__hotsale {
+      font-size: 20px;
+      font-style: italic;
+      text-transform: uppercase;
+      color: #ef3f23;
+      background: -webkit-linear-gradient(left, #ef3f23, #ff8a00);
+      background: -o-linear-gradient(right, #ef3f23, #ff8a00);
+      background: -moz-linear-gradient(right, #ef3f23, #ff8a00);
+      background: linear-gradient(to right, #ef3f23, #ff8a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0;
+
+      .icon__hotsale {
+        width: auto;
+        height: 30px;
+        margin: 0 4px;
+      }
+    }
+
+    .boxtitle__date {
+      .title {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .boxtitle__date_list {
+        .boxtitle__date_item {
+          list-style-type: none;
+          display: inline-block;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+
+        .boxtitle__date_item:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.countdown {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,24 @@
+.mySwipertext {
+  height: 20%;
+  width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+
+  .slideText {
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .slideText__link {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+
+  .slideText:not(:last-child) {
+    border-right: 1px solid rgba(192, 192, 192, 0.6);
+  }
+}

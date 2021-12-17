@@ -1,0 +1,56 @@
+.accountbox {
+  height: 100%;
+  flex-basis: 40%;
+  position: relative;
+
+  .accountbox__child {
+    height: 100%;
+  }
+
+  .account {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    height: 100%;
+    align-items: center;
+  }
+
+  .account__img {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+
+    .img {
+      width: 40%;
+      height: 60%;
+      max-height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      -o-object-fit: cover;
+    }
+  }
+
+  .name {
+    color: #fff;
+  }
+
+  .signout {
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    background: #999;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover .signout {
+    display: block;
+  }
+}

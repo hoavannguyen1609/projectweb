@@ -1,0 +1,10 @@
+.box_slide {
+  height: 100%;
+
+  .box_slide__list {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    height: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+.boxcart {
+  display: block;
+  height: 100%;
+
+  .cart {
+    display: block;
+    height: 100%;
+
+    .cart__link {
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      height: 100%;
+      align-items: center;
+
+      .cart__icon {
+        padding-right: 10px;
+
+        .icon {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

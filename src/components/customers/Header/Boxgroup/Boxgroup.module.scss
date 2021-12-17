@@ -1,0 +1,32 @@
+.boxgroup {
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  .callbuy {
+    .callbuy__link {
+      @extend .boxgroup;
+      height: 100%;
+
+      .callbuy__icon {
+        padding-right: 10px;
+
+        .icon {
+          font-size: 28px;
+          font-weight: 800;
+        }
+      }
+
+      .callbuy__text {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.boxgroup {
+  flex-basis: 42%;
+}

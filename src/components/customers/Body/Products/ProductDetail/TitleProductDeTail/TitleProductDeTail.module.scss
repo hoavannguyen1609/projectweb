@@ -1,0 +1,31 @@
+.title_box {
+  width: 100%;
+  padding: 0 0.5rem 1.25rem 0.5rem;
+
+  .title_group {
+    display: flex;
+    align-items: center;
+
+    .title {
+      padding-right: 3rem;
+
+      .title__child {
+        font-size: 26px;
+        margin-bottom: 0;
+      }
+    }
+
+    .star {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: row;
+      -ms-flex-direction: row;
+    }
+
+    .star__color {
+      color: orange;
+    }
+  }
+}

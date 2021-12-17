@@ -1,0 +1,17 @@
+.emptycart {
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  align-items: center;
+  color: #d70018;
+
+  .carticon {
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+  .cart_text {
+    font-size: 24px;
+  }
+}

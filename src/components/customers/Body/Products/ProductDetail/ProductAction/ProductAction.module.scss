@@ -1,0 +1,135 @@
+.product_action_box {
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  height: 100%;
+  padding: 0 1.25rem;
+
+  .product_installment {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+
+    .installment {
+      border-radius: 0.5rem;
+      border: 1px solid #d70018;
+      background-color: #fef2f2;
+      color: #d70018;
+      padding: 0.125rem;
+    }
+  }
+
+  .price_box {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .price {
+      font-weight: bold;
+      color: #d70018;
+      font-size: 16px;
+    }
+
+    .old_price {
+      font-size: 14px;
+      padding-left: 18px;
+    }
+  }
+
+  .promotion_box {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    border: 0.8px solid #fee2e2;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    .promotion_title {
+      width: 100%;
+      padding: 10px;
+      background: #fee2e2;
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      font-size: 16px;
+      color: #d70018;
+
+      .promotion_title__title {
+        padding-left: 12px;
+        font-weight: 600;
+      }
+    }
+
+    .promotion_content {
+      padding: 10px;
+    }
+  }
+
+  .btn_box {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    margin-top: 18px;
+
+    .btn_add_group {
+      width: 100%;
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      .btn_add {
+        color: #fff;
+        background-color: #d70018;
+        width: 100%;
+        border: 1px solid #d70018;
+        display: flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        align-items: center;
+        padding: 0.75rem 0.5rem;
+
+        strong {
+          text-transform: uppercase;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .btn_installment {
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      .btn_installment__item {
+        flex-basis: 48%;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        button {
+          width: 100%;
+          background: #277cea;
+          border: 1px solid #1d72e0;
+          color: #fff;
+          padding: 0.5rem;
+
+          strong {
+            text-transform: uppercase;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

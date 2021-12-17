@@ -1,0 +1,95 @@
+.cartitem_box {
+  padding: 0.75rem;
+  height: 280px;
+  border: 1px solid #888;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .cartitem_group {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+
+    .cartitem__img {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .img {
+        width: 100%;
+        height: 90%;
+      }
+    }
+
+    .cartitem_info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      -ms-flex-direction: column;
+
+      .item_name {
+        padding-left: 2rem;
+        font-weight: bold;
+      }
+
+      .pricebox {
+        padding-left: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1.25rem;
+
+        .price {
+          color: #e0052b;
+          font-weight: bold;
+        }
+
+        .oldprice {
+          margin-left: 2rem;
+          font-size: small;
+        }
+      }
+    }
+  }
+
+  .cart_action {
+    .button {
+      border: none;
+      outline: none;
+      background-color: #fff;
+      color: #0d6efd;
+    }
+  }
+
+  .buttongroup {
+    display: flex;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+
+    .minu_btn {
+      .btn {
+        border: 1px solid #999;
+      }
+    }
+
+    .quantity {
+      width: 28px;
+      text-align: center;
+      margin-left: 14px;
+    }
+
+    .plus_btn {
+      margin-left: 14px;
+
+      .btn {
+        border: 1px solid #999;
+      }
+    }
+  }
+}
+
+.cartitem_box:not(:last-child) {
+  padding-bottom: 1rem;
+}

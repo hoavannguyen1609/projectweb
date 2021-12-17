@@ -1,0 +1,22 @@
+.listproductbox {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.boxtitle {
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  border-radius: 0.5rem;
+}
+
+.boxtitle__title {
+  padding: 0.25rem 0.5rem;
+
+  .title {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.75rem;
+  }
+}

@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { Route, Routes, Outlet } from "react-router-dom";
+import axios from "axios";
+
+import GoToTop from "./components/GoToTop";
+import CustomerLayout from "./pages/customers";
+import AdminLayout from "./pages/admins";
+
+// axios.interceptors.request.use((config: any): any => {
+//   const token = localStorage.getItem("access_token");
+//   config.headers.Authorization = token ? `Bearer ${token}` : ``;
+// });
 
 function App() {
+  const [showBackTop, setShowBackTop] = useState(false);
+
+  useEffect((): any => {
+    const handleScroll = (): any => setShowBackTop(window.scrollY >= 300);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return (): any => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/*" element={<CustomerLayout />} />
+        <Route path="/admin/*" element={<AdminLayout />} />
+      </Routes>
+      <Outlet />
+      {showBackTop && <GoToTop />}
+    </>
   );
 }
 

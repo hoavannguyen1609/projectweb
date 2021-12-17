@@ -1,0 +1,78 @@
+.navigtion {
+  height: 100%;
+
+  .nav__list {
+    height: 100%;
+    margin-bottom: 0;
+    padding-left: 1.5%;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: space-between;
+
+    .nav__tiem {
+      flex: 1;
+      display: flex;
+    }
+
+    .nav__link {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      padding-left: 5%;
+
+      .icon_cps {
+        display: inline-block;
+        background: url("http://127.0.0.1:8000/icon/icons_menubar.svg");
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-size: 300px;
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+      }
+
+      .icon_cps_3 {
+        @extend .icon_cps;
+        background-position: 5px -182px;
+      }
+
+      .icon_cps_380 {
+        @extend .icon_cps;
+        background-size: 280px;
+        background-position: -21px -168px;
+      }
+
+      .icon_cps_4 {
+        @extend .icon_cps;
+        background-size: 280px;
+        background-position: -47px -168px;
+      }
+
+      .icon_cps_220 {
+        @extend .icon_cps;
+        background-position: -80px -182px;
+      }
+
+      .icon_cps_610 {
+        @extend .icon_cps;
+        background-position: -107px -182px;
+      }
+
+      .icon_cps_30 {
+        @extend .icon_cps;
+        background-size: 350px;
+        background-position: -192px -214px;
+      }
+
+      .nav__text {
+        padding: 4%;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+.productbox {
+  width: 100%;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 0;
+  position: relative;
+  height: 100%;
+
+  &:hover {
+    .productbox__img {
+      transform: translateY(-8%);
+      -o-transform: translateY(-8%);
+      -ms-transform: translateY(-8%);
+      -webkit-transform: translateY(-8%);
+      -moz-transform: translateY(-8%);
+    }
+  }
+
+  .productbox__img {
+    padding: 0.75rem 0.75rem;
+    transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -ms-transition-timing-function: ease;
+
+    .product__link {
+      display: block;
+
+      .product__img {
+        width: 100%;
+      }
+    }
+  }
+
+  .product__name {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+
+    .product__name_link {
+      color: #333;
+      text-decoration: none;
+      display: block;
+
+      .product__name_item {
+        width: 100%;
+        word-wrap: normal;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .product_price {
+    width: 100%;
+    margin-top: 14px;
+
+    .product_price_link {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      .olprice {
+        color: #d70018;
+        font-weight: bold;
+      }
+
+      .newprice {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .product__stickerpercent {
+    width: 39px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 5px !important;
+    margin: 0 !important;
+    background-image: url(https://cdn.cellphones.com.vn/media/icon/icons_menubar-11.svg);
+    background-repeat: no-repeat;
+    background-size: 900px;
+    background-position: -594px -255px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .product__stickerIcon {
+      margin-bottom: 0;
+    }
+  }
+
+  .star {
+    .star__link {
+      color: orange;
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+  }
+
+  .button__adcart__box {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+
+    .button__adcart {
+      color: #fff;
+      background-color: #d70018;
+      border-radius: 0.25rem;
+      border: none;
+      outline: none;
+      padding: 0.25rem;
+      width: 96%;
+      position: absolute;
+      bottom: 10px;
+      margin: auto;
+      flex: 1;
+    }
+  }
+}

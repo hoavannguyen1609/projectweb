@@ -1,0 +1,14 @@
+.buttonbox {
+  text-align: center;
+
+  .button {
+    width: 100%;
+  }
+}
+
+.linkbox {
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: end;
+}

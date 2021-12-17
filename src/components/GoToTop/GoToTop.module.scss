@@ -1,0 +1,26 @@
+.backToTop {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #d70018;
+  line-height: 30px;
+  color: #fff;
+  transition: opacity 0.2s ease-out;
+  opacity: 0.5;
+  position: fixed;
+  bottom: 6%;
+  right: 40px;
+  z-index: 9999;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+}

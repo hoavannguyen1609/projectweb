@@ -1,0 +1,39 @@
+.navuserBox {
+  height: 100%;
+
+  .navuser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    .user__icon {
+      padding-right: 10px;
+
+      .icon {
+        font-size: 28px;
+      }
+    }
+
+    .navuser__text {
+      @extend .navuser;
+
+      .navuser__border {
+        color: #fff;
+        padding: 0 10px;
+      }
+    }
+
+    .btn_signin,
+    .btn_signup {
+      height: 100%;
+
+      .sigin_link,
+      .siginup_link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
