@@ -128,6 +128,9 @@ function Sigin(): JSX.Element {
               >
                 Đăng ký
               </Link>
+              <Link to="/quen-mat-khau" className="text-info">
+                Quên mật khẩu
+              </Link>
             </Form.Group>
           </Form>
         </div>

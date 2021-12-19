@@ -4,7 +4,7 @@ import Header from "components/customers/Header";
 import Footer from "components/customers/Footer";
 
 import ParentBody from "components/customers/ParentBody";
-import Sigin from "components/customers/Body/Sigin";
+import Sigin from "components/customers/Body/user/Sigin";
 
 function SigninPage() {
   useEffect((): any => (document.title = "Đăng nhập"), []);

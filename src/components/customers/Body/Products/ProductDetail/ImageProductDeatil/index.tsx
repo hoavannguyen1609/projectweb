@@ -9,16 +9,16 @@ import classes from "./ImageProductDeatil.module.scss";
 
 SwiperCore.use([Autoplay, Navigation]);
 
-interface Props {
-  props: any;
+interface Product {
+  product: any;
 }
 
-function ImageProductDeatil({ props }: Props) {
+function ImageProductDeatil({ product }: Product) {
   const [imageSlide, setImageSlide] = useState(
-    `${baseURL}/image/imageproducts/${props.image}`
+    `${baseURL}/image/imageproducts/${product.image}`
   );
 
-  let imageList = props.imageproduct.split(",");
+  let imageList: string[] = product.imageproduct.split(",");
 
   const handleClick = (e: MouseEvent): void => {
     setImageSlide((): string => String(e.currentTarget.getAttribute("src")));
@@ -43,7 +43,7 @@ function ImageProductDeatil({ props }: Props) {
             <SwiperSlide className={clsx(classes.slides)}>
               <img
                 className={classes.image}
-                src={`${baseURL}/image/imageproducts/${props.image}`}
+                src={`${baseURL}/image/imageproducts/${product.image}`}
                 onClick={(e: MouseEvent): void => handleClick(e)}
               />
             </SwiperSlide>

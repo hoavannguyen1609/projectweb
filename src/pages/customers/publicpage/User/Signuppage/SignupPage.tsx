@@ -4,7 +4,7 @@ import Header from "components/customers/Header";
 import Footer from "components/customers/Footer";
 
 import ParentBody from "components/customers/ParentBody";
-import Signup from "components/customers/Body/Signup";
+import Signup from "components/customers/Body/user/Signup";
 
 function SignupPage() {
   useEffect((): any => (document.title = "Đăng ký"), []);

@@ -7,7 +7,7 @@ import styles from "styles/Grid.module.scss";
 import classes from "./ProductDetail.module.scss";
 
 interface Props {
-  products: any[];
+  products: any;
 }
 
 function ProductDetail({ products }: Props) {
@@ -22,32 +22,14 @@ function ProductDetail({ products }: Props) {
         )}
       >
         <div className={clsx(styles.l4, styles.m6, styles.c12)}>
-          {/* {products.map(
-            (product: any): JSX.Element => (
-          <div key={products[0].id}> */}
-          <ImageProductDeatil key={products[0].id} props={products[0]} />
-          {/* </div>
-          )
-          )} */}
+          <ImageProductDeatil product={products} />
         </div>
         <div className={clsx(styles.l5, styles.m6, styles.c12)}>
-          {/* {products.map(
-            (product: any): JSX.Element => (
-          <div key={products[0].id}> */}
-          <ProductAction product={products[0]} key={products[0].id} />
-          {/* </div>
-          )
-          )} */}
+          <ProductAction product={products} />
         </div>
-        <div className={clsx(styles.l3, styles.m6, styles.c12)}>
-          {/* {products.map(
-            (product: any): JSX.Element => (
-          <div key={products[0].id}> */}
-          <ProductAction product={products[0]} key={products[0].id} />
-          {/* </div>
-          )
-          )} */}
-        </div>
+        {/* <div className={clsx(styles.l3, styles.m6, styles.c12)}>
+          <ProductAction product={products} />
+        </div> */}
       </div>
     </>
   );

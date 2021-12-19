@@ -11,31 +11,33 @@ const routers = {
     loudspeaker: "products/loudspeakerHome",
 
     productDetail: "products/productDetail",
-
     productGroup: "products/productGroup",
-  },
-
-  user: {
-    sigin: "user/signin",
-    signup: "user/signup",
-    signout: "/user/signout",
   },
 
   search: "search",
 
+  user: {
+    sigin: "user/signin",
+    signup: "user/signup",
+    signout: "user/signout",
+    confirmEmail: "user/confirmEmail",
+    confirmOtp: "user/confirmOtp",
+    setagainPassword: "user/setagainPassword",
+  },
+
   cart: {
     cart: "cart/getcart",
-    // removeCart: "cart/removeCart",
-    // changeQuantity: "/cart/changeQuantity",
     create: "cart/create",
     handleChange: "cart/handleChange",
   },
 
   admin: {
-    products: "admin/products",
+    getProducts: "admin/getProducts",
+    checkAdmin: "admin/checkAdmin",
+    changeProduct: "admin/changeProduct",
+    form: "admin/changeIdProduct",
+    updateProduct: "admin/updateProduct",
   },
-
-  checkAdmin: "checkAdmin",
 };
 
 export default routers;

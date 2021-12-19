@@ -35,7 +35,12 @@ function ProductDetailPage() {
       <Header />
       <ParentBody>
         <TitleProductDeTail title={params.productName.split("-").join(" ")} />
-        <ProductDetail products={products} />
+        {products &&
+          products.map(
+            (product: any): JSX.Element => (
+              <ProductDetail key={product.id} products={product} />
+            )
+          )}
       </ParentBody>
       <Footer />
     </>

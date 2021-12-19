@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import { memo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLinkClickHandler } from "react-router-dom";
 
 import styles from "styles/Grid.module.scss";
 import classes from "./NavBar.module.scss";
 
 function NavBar() {
+  useLinkClickHandler("/");
+
   return (
     <div className={clsx(classes.navigtion, styles.l2)}>
       <ul className={clsx("shadow-sm", classes.nav__list)}>
