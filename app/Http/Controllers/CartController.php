@@ -10,30 +10,35 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $products = DB::table('carts')->select('carts.id', 'carts.quantity', 'products.price', 'products.name', 'products.reduce', 'products.image')
-            ->join('products', 'carts.products_id', '=', 'products.id')
-            ->where('carts.users_id', '=', $request->id)
-            ->get();
-        return response()->json($products);
+        try {
+            $products = DB::table('carts')->select('carts.id', 'carts.quantity', 'products.price', 'products.name', 'products.reduce', 'products.image')
+                ->join('products', 'carts.products_id', '=', 'products.id')
+                ->where('carts.users_id', '=', $request->id)
+                ->get();
+            return response()->json($products);
+        } catch (\Exception  $error) {
+            return response()->json([
+                'status_code' => 500,
+                'message' => 'Error in Login',
+                'error' => $error,
+            ]);
+        }
     }
 
-    public function removeCart(Request $request)
-    {
-        Cart::destroy($request->id);
-        return response()->json(['message' => 'Xóa sản phẩm thành công', 'id' => $request->id]);
-    }
-
-    public function changeQuantity(Request $request)
+    public function handleChange(Request $request)
     {
         $cart = Cart::find($request->id);
-        if ($request->action == 'minus') {
+        if ($request->type == 'minus') {
             $cart->quantity = $cart->quantity - 1;
             $cart->save();
             return response()->json(['message' => 'Giảm thành công', 'quantity' => $cart->quantity]);
-        } else {
+        } else if ($request->type == 'plus') {
             $cart->quantity = $cart->quantity + 1;
             $cart->save();
             return response()->json(['message' => 'Tăng thành công', 'quantity' => $cart->quantity]);
+        } else if ($request->type == 'remove') {
+            Cart::destroy($request->id);
+            return response()->json(['message' => 'Xóa sản phẩm thành công', 'id' => $request->id]);
         }
     }
 

@@ -7,20 +7,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function checkAdmin(Request $request)
-    {
-        $user = User::find($request->id);
-        if ($user->rules == 2) {
-            return response()->json(['status' => 200]);
-        } else {
-            return response()->json(['status' => 201, 'rules' => $user->rules]);
-        }
-    }
-
     public function signin(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -33,7 +24,7 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['err' => $validator->errors(), 'status' => 201]);
+            return response()->json(['error' => $validator->errors(), 'status' => 201]);
         } else {
             $user = User::where('email', $request->email)->first();
             if (!$user || !Hash::check($request->password, $user->password)) {
@@ -120,6 +111,78 @@ class UserController extends Controller
                 'status' => 200,
                 'message' => 'Đăng ký thành công'
             ]);
+        }
+    }
+
+    public function signout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json(['status' => 200, 'message' => 'Đăng xuất thành công']);
+    }
+
+    public function confirmEmail(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email'
+        ], [
+            'email.required' => 'Vui lòng nhập email',
+            'emai.email' => 'Vui lòng nhập đúng định dạng email'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['status' => 201, 'error' => $validator->errors()]);
+        } else {
+            $user = User::where('email', $request->email)->first();
+
+            if (!$user) {
+                return response()->json(['status' => 201, 'message' => 'Tài khoản không tồn tại']);
+            } else {
+                $otp = rand(100000, 999999);
+                $user->otp = $otp;
+                $user->save();
+
+                $name = $user->name;
+
+                $email = $request->email;
+
+                Mail::send('emails.Users.SendOtp', compact('otp'), function ($mail) use ($name, $email) {
+                    $mail->subject('Mã xác nhận quên mật khẩu');
+                    $mail->to($email, $name);
+                });
+
+                return response()->json(['status' => 200, 'message' => 'Vui lòng kiểm tra email để lấy mã OTP']);
+            }
+        }
+    }
+
+    public function confirmOtp(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+        if ($user) {
+            if ($user->otp != $request->otp) {
+                return response()->json(['status' => 201, 'error' => 'Mã OTP không hợp lệ']);
+            } else {
+                return response()->json(['status' => 200, 'message' => 'Xác nhận thành công']);
+            }
+        }
+    }
+
+    public function setagainPassword(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        $user->password = Hash::make($request->password);
+
+        return response()->json(['status' => 200, 'message' => 'Mật khẩu thay đổi thành công']);
+    }
+
+    public function checkAdmin(Request $request)
+    {
+        $user = User::find($request->id);
+        if ($user->rules == 2 && $user->name == $request->userName) {
+            return response()->json(['status' => 200]);
+        } else {
+            return response()->json(['status' => 201, 'rules' => $user->rules]);
         }
     }
 }
